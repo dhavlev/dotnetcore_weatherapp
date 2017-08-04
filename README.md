@@ -5,19 +5,19 @@ This is a sample weather application meant for understanding dotnet core compila
 * Running an application in stand-alone mode
 * Deploying application on linux - Centos using Apache as web server using Docker
 #### Executing Application
-Restoring packages
+##### Restoring packages
 ```
 dotnet restore MicroServiceDocker
 ```
-Publishing Package
+##### Publishing Package
 ```
 dotnet publish MicroServiceDocker/MicroServiceDocker.csproj -c Release -o published
 ```
-Running application
+##### Running application
 ```
 dotnet published/WeatherMicroservice.dll --server.urls http://127.0.0.1:5000
 ```
-Output
+##### Output
 ```
 [
   {
@@ -53,25 +53,20 @@ Output
 ]
 ```
 
-#### Deploying Docket Container
-Build Docker Image
+#### Deploying Docker Container
+##### Build Docker Image
 ```
 docker build -t dotnet:1.0 .
 ```
-Run Docker Image
+##### Run Docker Image
 ```
 docker run -d --name=web1 -p 8080:80 dotnet:1.0
 ```
-Stop Docker Image
+##### Stop Docker Image
 ```
 docker stop web1
 ```
-Accessing Web App
+##### Accessing Web App
 ```
 http://MyServerNameOrIP:8080/?lat=12312312&long=123112
-`
-
-
-
-
-
+```
